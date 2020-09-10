@@ -15,6 +15,17 @@ Feature: Selenium Commands
     Then I navigate back to the previous page
     And I navigate to the next page using the forward button
     And I click on the submit button
-
     And the password error message is displayed
     And I close my window
+
+  Scenario: Form Fields Test
+    Given I navigate to blueskycitadelform site
+    When I click on Automation Testing Form
+    And I enter the Single Line Text
+    And I enter email address
+    And I enter password
+    And I clear the Password
+    And I click on the radio button
+    And I click on the submit button
+    And the submit error message is displayed
+    Then I close my window

@@ -59,7 +59,7 @@ public class BlueSkyCitadelForm {
     @Then("^I close my window$")
     public void iCloseMyWindow() {
         driver.close();
-        driver.quit();
+
     }
 
     @And("^I enter email address$")
@@ -157,6 +157,15 @@ public class BlueSkyCitadelForm {
         System.out.println(errorMessage);
 
        boolean isMessageDisplayed =  driver.findElement(By.cssSelector("#nf-form-errors-9 > nf-errors > nf-section > div")).isDisplayed();
+        System.out.println(isMessageDisplayed);
+    }
+
+    @And("^the submit error message is displayed$")
+    public void theSubmitErrorMessageIsDisplayed() {
+        String errorMessage = driver.findElement(By.xpath("//*[@id=\"nf-form-errors-9\"]/nf-errors/nf-section/div")).getText();
+        System.out.println(errorMessage);
+
+        boolean isMessageDisplayed =  driver.findElement(By.xpath("//*[@id=\"nf-form-errors-9\"]/nf-errors/nf-section/div")).isDisplayed();
         System.out.println(isMessageDisplayed);
     }
 }
